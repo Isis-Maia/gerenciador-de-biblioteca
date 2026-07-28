@@ -1,8 +1,8 @@
 import java.util.Scanner;
 
-public class App {
+public class Catalogo {
 
-    public abstract class Catalogo {
+    public abstract class Caralogo_BackEnd   {
         String[] armazem = {"Harry Potter 1", "Harry Potter 2", "Harry Potter 4", "Harry Potter 6", "Five Nights at Freddys"};
         Scanner input = new Scanner(System.in);
         
