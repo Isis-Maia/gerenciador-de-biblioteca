@@ -3,6 +3,7 @@
  */
 
 package com.mycompany.gerenciadordebiblioteca;
+import com.mycompany.gerenciadordebiblioteca.util.ConnectionFactory;
 import java.sql.Connection;
 
 /**
