@@ -4,6 +4,8 @@
 
 package com.mycompany.gerenciadordebiblioteca;
 import com.mycompany.gerenciadordebiblioteca.util.ConnectionFactory;
+import com.mycompany.gerenciadordebiblioteca.util.DatabaseInitializer;
+import com.mycompany.gerenciadordebiblioteca.util.TableInitializer;
 import java.sql.Connection;
 
 /**
@@ -13,6 +15,9 @@ import java.sql.Connection;
 public class GerenciadorDeBiblioteca {
 
     public static void main(String[] args) {
+        DatabaseInitializer.iniciar();
+        TableInitializer.iniciar();
+        
         Connection conn = ConnectionFactory.getConnection();
         if (conn != null){
             System.out.println("Conexão bem-sucedida!");
