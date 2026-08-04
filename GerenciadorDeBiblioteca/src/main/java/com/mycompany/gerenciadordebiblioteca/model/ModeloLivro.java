@@ -1,6 +1,6 @@
 package com.mycompany.gerenciadordebiblioteca.model;
 
-/**
+/*
  *
  * @author isismaia
  */
@@ -9,17 +9,28 @@ public class ModeloLivro {
         private int id;
         private String titulo;
         private String publicacao;
-        private String autor;
+        public String editora;
+        private int autorId;
         private int quantidade;
         private String genero;
         
-        public Livro(int id, String titulo, String publicacao, String autor, int quantidade, String genero){
+        public Livro(String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
+            this.titulo = titulo;
+            this.publicacao = publicacao;
+            this.autorId = autorId;
+            this.quantidade = quantidade;
+            this.genero = genero;
+            this.editora = editora;
+        }
+        
+        public Livro(int id, String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
             this.id = id;
             this.titulo = titulo;
             this.publicacao = publicacao;
-            this.autor = autor;
+            this.autorId = autorId;
             this.quantidade = quantidade;
             this.genero = genero;
+            this.editora = editora;
         }
         /**
          * 
@@ -35,8 +46,8 @@ public class ModeloLivro {
             public void setPublicacao(String publicacao) {this.publicacao = publicacao;}
 
 
-            public String getAutor() { return autor; }
-            public void setAutor(String autor) {this.autor = autor;}
+            public int getAutor() { return autorId; }
+            public void setAutor(int autor) {this.autorId = autor;}
             
             public int getQuantidade() { return quantidade; }
             public void setQuantidade(int quantidade) {this.quantidade = quantidade;}
