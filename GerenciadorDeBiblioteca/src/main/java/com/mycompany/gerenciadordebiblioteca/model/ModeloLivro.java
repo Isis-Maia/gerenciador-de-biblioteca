@@ -14,6 +14,7 @@ public class ModeloLivro {
         private int quantidade;
         private String genero;
         
+        // Construtor sem id (antes de salvar)
         public Livro(String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
             this.titulo = titulo;
             this.publicacao = publicacao;
@@ -22,7 +23,7 @@ public class ModeloLivro {
             this.genero = genero;
             this.editora = editora;
         }
-        
+        // Construtor com id (pra quando já veio do banco)
         public Livro(int id, String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
             this.id = id;
             this.titulo = titulo;
