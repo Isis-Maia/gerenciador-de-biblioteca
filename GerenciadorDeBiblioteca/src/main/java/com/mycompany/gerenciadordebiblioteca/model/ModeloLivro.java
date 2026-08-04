@@ -21,6 +21,10 @@ public class ModeloLivro {
             this.quantidade = quantidade;
             this.genero = genero;
         }
+        /**
+         * 
+         * @return e set 
+         */
             public int getId() { return id; }
             public void setId(int id) {this.id = id;}
 
