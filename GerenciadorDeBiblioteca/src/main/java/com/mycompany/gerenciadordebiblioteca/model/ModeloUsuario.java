@@ -26,11 +26,17 @@ public class ModeloUsuario {
 
             // O que vai ser afetado quando colocado alguma informação na variavel.
             public String getNome() { return nome; }
+            public void setNome(String nome) {this.nome = nome;}
             public String getCpf() { return cpf; }
+            public void setCpf(String cpf) {this.cpf = cpf;}
             public String getEmail() { return email; }
+            public void setEmail(String email) {this.email = email;}
             public String getLocalizacao() { return localizacao; }
+            public void setLocalizacao(String localizacao) {this.localizacao = localizacao;}
             public int getNumero() { return numero; }
+            public void setNumero(int numero) {this.numero = numero;}
             public boolean getFuncionario() { return funcionario; }
+            public void setFuncionario(Boolean funcionario) {this.funcionario = funcionario;}
             
     }
 }
