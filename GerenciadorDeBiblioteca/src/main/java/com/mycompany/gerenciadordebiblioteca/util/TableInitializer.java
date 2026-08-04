@@ -13,8 +13,7 @@ public class TableInitializer {
 
     public static void iniciar() {
         criarTabelaUsuarios();
-        // Conforme novas tabelas forem definidas (livros, emprestimos, etc.),
-        // adicione novos metodos criarTabelaX() e chame aqui.
+        criarTabelaAutor();
     }
 
     private static void criarTabelaUsuarios() {
@@ -37,6 +36,24 @@ public class TableInitializer {
 
         } catch (SQLException e) {
             System.out.println("Erro ao criar/verificar a tabela usuarios: " + e.getMessage());
+        }
+    }
+    
+    private static void criarTabelaAutor() {
+        String sql =
+            "CREATE TABLE IF NOT EXISTS autor (" +
+            "  id INT AUTO_INCREMENT PRIMARY KEY," +
+            "  nome VARCHAR(150) NOT NULL" +
+            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement()) {
+
+            stmt.executeUpdate(sql);
+            System.out.println("Tabela \"autor\" garantida.");
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao criar/verificar a tabela autor: " + e.getMessage());
         }
     }
 }
