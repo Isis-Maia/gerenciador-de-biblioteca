@@ -4,20 +4,19 @@ package com.mycompany.gerenciadordebiblioteca.model;
  *
  * @author isismaia
  */
-public class ModeloUsuario {
+public class Usuario {
     // informações de usuario.
-    public abstract class Usuario{
             // variaveis gerais, estão privadas para não serem diretamente modificadas.
             private int id;
             private String nome;
             private String cpf;
             private String email;
             private String localizacao;
-            private int numero;
+            private String numero;
             private boolean funcionario; // para definir se é ou não funcionario
             
             // Construtor sem id (antes de salvar)
-            public Usuario(String nome, String cpf, String email, String localizacao, int numero, boolean funcionario){
+            public Usuario(String nome, String cpf, String email, String localizacao, String numero, boolean funcionario){
                 this.nome = nome;
                 this.cpf = cpf;
                 this.email = email;
@@ -26,7 +25,7 @@ public class ModeloUsuario {
                 this.funcionario = funcionario;
             }
             // Construtor com id (pra quando já veio do banco)
-            public Usuario(int id, String nome, String cpf, String email, String localizacao, int numero, boolean funcionario){
+            public Usuario(int id, String nome, String cpf, String email, String localizacao, String numero, boolean funcionario){
                 this.id = id;   
                 this.nome = nome;
                 this.cpf = cpf;
@@ -53,11 +52,11 @@ public class ModeloUsuario {
             public String getLocalizacao() { return localizacao; }
             public void setLocalizacao(String localizacao) {this.localizacao = localizacao;}
             
-            public int getNumero() { return numero; }
-            public void setNumero(int numero) {this.numero = numero;}
+            public String getNumero() { return numero; }
+            public void setNumero(String numero) {this.numero = numero;}
             
             public boolean getFuncionario() { return funcionario; }
             public void setFuncionario(Boolean funcionario) {this.funcionario = funcionario;}
             
     }
-}
+

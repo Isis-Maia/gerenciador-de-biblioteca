@@ -24,9 +24,9 @@ public class TableInitializer {
             "  nome VARCHAR(150) NOT NULL," +
             "  cpf VARCHAR(11) NOT NULL UNIQUE," +
             "  email VARCHAR(150) NOT NULL UNIQUE," +
-            "  telefone VARCHAR(20)," +
-            "  endereco VARCHAR(150)," +
-            "  fucionario BOOL NOT NULL" +
+            "  numero VARCHAR(20)," +
+            "  localizacao VARCHAR(150)," +
+            "  funcionario BOOL NOT NULL" +
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
         try (Connection conn = ConnectionFactory.getConnection();
