@@ -14,6 +14,7 @@ public class TableInitializer {
     public static void iniciar() {
         criarTabelaUsuarios();
         criarTabelaAutor();
+        criarTabelaLivros();
     }
 
     private static void criarTabelaUsuarios() {
@@ -54,6 +55,30 @@ public class TableInitializer {
 
         } catch (SQLException e) {
             System.out.println("Erro ao criar/verificar a tabela autor: " + e.getMessage());
+        }
+    }
+    
+        private static void criarTabelaLivros() {
+        String sql =
+            "CREATE TABLE IF NOT EXISTS livros (" +
+            "  id INT AUTO_INCREMENT PRIMARY KEY," +
+            "  titulo VARCHAR(150) NOT NULL," +
+            "  editora VARCHAR(150)," +
+            "  ano_publicacao INT NOT NULL," +
+            "  quantidade INT NOT NULL," +
+            "  genero VARCHAR(20) NOT NULL," +
+            "  autor_id INT," +
+            "  FOREIGN KEY (autor_id) REFERENCES autor(id)" +
+            ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             Statement stmt = conn.createStatement()) {
+
+            stmt.executeUpdate(sql);
+            System.out.println("Tabela \"livros\" garantida.");
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao criar/verificar a tabela livros: " + e.getMessage());
         }
     }
 }
