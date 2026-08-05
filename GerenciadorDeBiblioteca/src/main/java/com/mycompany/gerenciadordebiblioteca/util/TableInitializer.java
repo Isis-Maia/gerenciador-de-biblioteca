@@ -44,7 +44,7 @@ public class TableInitializer {
         String sql =
             "CREATE TABLE IF NOT EXISTS autor (" +
             "  id INT AUTO_INCREMENT PRIMARY KEY," +
-            "  nome VARCHAR(150) NOT NULL" +
+            "  nome VARCHAR(150) NOT NULL UNIQUE" +
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
         try (Connection conn = ConnectionFactory.getConnection();
@@ -62,7 +62,7 @@ public class TableInitializer {
         String sql =
             "CREATE TABLE IF NOT EXISTS livros (" +
             "  id INT AUTO_INCREMENT PRIMARY KEY," +
-            "  titulo VARCHAR(150) NOT NULL," +
+            "  titulo VARCHAR(150) NOT NULL UNIQUE, " +
             "  editora VARCHAR(150)," +
             "  publicacao INT NOT NULL," +
             "  quantidade INT NOT NULL," +

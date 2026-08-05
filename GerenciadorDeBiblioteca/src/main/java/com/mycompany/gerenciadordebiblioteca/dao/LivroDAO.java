@@ -30,7 +30,11 @@ public class LivroDAO {
             System.out.println("Livro cadastrado com sucesso!");
             
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao cadastrar livro: " + e.getMessage(), e);
+            if (e.getErrorCode() == 1062){
+                System.out.println("Livro já cadastrado.");
+            } else {
+                throw new RuntimeException("Erro ao cadastrar Livro: " + e.getMessage(), e);
+            }
         }
     }
 }

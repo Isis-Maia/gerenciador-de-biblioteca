@@ -31,7 +31,11 @@ public class UsuarioDAO {
             System.out.println("Usuário cadastrado com sucesso!");
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao cadastrar usuário: " + e.getMessage(), e);
+            if (e.getErrorCode() == 1062){
+                System.out.println("Usuario já cadastrado.");
+            } else {
+                throw new RuntimeException("Erro ao cadastrar Usuario: " + e.getMessage(), e);
+            }
         }
     }
 }

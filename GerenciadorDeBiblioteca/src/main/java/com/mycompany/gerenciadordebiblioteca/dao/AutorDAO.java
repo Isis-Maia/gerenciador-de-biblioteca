@@ -26,7 +26,11 @@ public class AutorDAO {
             System.out.println("autor cadastrado com sucesso!");
 
         } catch (SQLException e) {
-            throw new RuntimeException("Erro ao cadastrar autor: " + e.getMessage(), e);
+            if (e.getErrorCode() == 1062){
+                System.out.println("Autor já cadastrado.");
+            } else {
+                throw new RuntimeException("Erro ao cadastrar autor: " + e.getMessage(), e);
+            }
         }
     }
 }

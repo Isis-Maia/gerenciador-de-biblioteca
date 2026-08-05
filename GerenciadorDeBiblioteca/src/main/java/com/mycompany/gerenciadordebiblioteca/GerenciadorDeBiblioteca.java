@@ -25,7 +25,6 @@ public class GerenciadorDeBiblioteca {
         }
         
         Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false);
-        
         UsuarioDAO dao = new UsuarioDAO();
         dao.cadastrar(novoUsuario);
         
