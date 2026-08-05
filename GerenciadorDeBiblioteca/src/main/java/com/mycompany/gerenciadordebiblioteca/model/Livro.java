@@ -4,8 +4,7 @@ package com.mycompany.gerenciadordebiblioteca.model;
  *
  * @author isismaia
  */
-public class ModeloLivro {
-    public abstract class Livro{
+public class Livro {
         private int id;
         private String titulo;
         private String publicacao;
@@ -15,7 +14,7 @@ public class ModeloLivro {
         private String genero;
         
         // Construtor sem id (antes de salvar)
-        public Livro(String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
+        public Livro(String titulo, String publicacao, int autorId, int quantidade, String genero, String editora){
             this.titulo = titulo;
             this.publicacao = publicacao;
             this.autorId = autorId;
@@ -24,7 +23,7 @@ public class ModeloLivro {
             this.editora = editora;
         }
         // Construtor com id (pra quando já veio do banco)
-        public Livro(int id, String titulo, String publicacao, int autor, int quantidade, String genero, String editora){
+        public Livro(int id, String titulo, String publicacao, int autorId, int quantidade, String genero, String editora){
             this.id = id;
             this.titulo = titulo;
             this.publicacao = publicacao;
@@ -55,7 +54,11 @@ public class ModeloLivro {
             
             public String getGenero() { return genero; }
             public void setGenero(String genero) {this.genero = genero;}
+
+            public String getEditora() { return editora; }
+
+            public void setEditora(String editora) { this.editora = editora; }
+            
         }
             
-    }
 

@@ -1,0 +1,36 @@
+package com.mycompany.gerenciadordebiblioteca.dao;
+
+import com.mycompany.gerenciadordebiblioteca.model.Livro;
+import com.mycompany.gerenciadordebiblioteca.util.ConnectionFactory;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+/**
+ *
+ * @author guilherme
+ */
+public class LivroDAO {
+    public void cadastrar (Livro livro){
+        String sql = "INSERT INTO livros (titulo, publicacao, autorId, quantidade, genero, editora) VALUES (?, ?, ?, ?, ?, ?)";
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, livro.getTitulo());
+            stmt.setString(2, livro.getPublicacao());
+            stmt.setInt(3, livro.getAutor());
+            stmt.setInt(4, livro.getQuantidade());
+            stmt.setString(5, livro.getGenero());
+            stmt.setString(6, livro.getEditora());
+            
+            stmt.executeUpdate();
+            System.out.println("Livro cadastrado com sucesso!");
+            
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao cadastrar livro: " + e.getMessage(), e);
+        }
+    }
+}

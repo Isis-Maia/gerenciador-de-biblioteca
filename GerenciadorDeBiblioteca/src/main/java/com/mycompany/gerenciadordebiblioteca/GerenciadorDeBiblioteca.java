@@ -3,14 +3,11 @@
  */
 
 package com.mycompany.gerenciadordebiblioteca;
-import com.mycompany.gerenciadordebiblioteca.util.ConnectionFactory;
-import com.mycompany.gerenciadordebiblioteca.util.DatabaseInitializer;
-import com.mycompany.gerenciadordebiblioteca.util.TableInitializer;
+import com.mycompany.gerenciadordebiblioteca.util.*;
+import com.mycompany.gerenciadordebiblioteca.model.*;
+import com.mycompany.gerenciadordebiblioteca.dao.*;
+
 import java.sql.Connection;
-
-import com.mycompany.gerenciadordebiblioteca.model.Usuario;
-import com.mycompany.gerenciadordebiblioteca.dao.UsuarioDAO;
-
 /**
  *
  * @author guilherme
@@ -31,5 +28,13 @@ public class GerenciadorDeBiblioteca {
         
         UsuarioDAO dao = new UsuarioDAO();
         dao.cadastrar(novoUsuario);
+        
+        Autor autor = new Autor("Machado de Assis");
+        AutorDAO autorDAO = new AutorDAO();
+        autorDAO.cadastrar(autor);
+        
+        Livro livro = new Livro("Dom carmuso", "1890", 1, 2, "sla", "xyz");
+        LivroDAO livroDAO = new LivroDAO();
+        livroDAO.cadastrar(livro);
     }
 }
