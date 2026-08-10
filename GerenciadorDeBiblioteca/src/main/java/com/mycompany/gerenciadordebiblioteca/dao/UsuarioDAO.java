@@ -7,6 +7,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.logging.Logger;
 
 /**
  *
@@ -37,5 +40,36 @@ public class UsuarioDAO {
                 throw new RuntimeException("Erro ao cadastrar Usuario: " + e.getMessage(), e);
             }
         }
+    }
+    
+    public List<Usuario> read() {
+        
+        String sql = "SELECT * FROM usuarios";
+        List<Usuario> usuarios = new ArrayList<>();
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+            ResultSet rs = stmt.executeQuery();
+            
+            while (rs.next()){
+                
+                Usuario usuario = new Usuario(0, "", "", "", "", "", true);
+                
+                usuario.setId(rs.getInt("id"));
+                usuario.setNome(rs.getString("nome"));
+                usuario.setCpf(rs.getString("cpf"));
+                usuario.setEmail(rs.getString("email"));
+                usuario.setNumero(rs.getString("numero"));
+                usuario.setLocalizacao(rs.getString("localizacao"));
+                usuario.setFuncionario(rs.getBoolean("funcionario"));
+                usuarios.add(usuario);
+                
+            }
+        
+        } catch (SQLException e) {
+           throw new RuntimeException("Erro ao cadastrar autor: " + e.getMessage(), e);
+        }
+        
+        return usuarios;
     }
 }
