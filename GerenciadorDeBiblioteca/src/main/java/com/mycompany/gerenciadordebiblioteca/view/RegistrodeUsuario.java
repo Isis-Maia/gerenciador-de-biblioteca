@@ -42,9 +42,11 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
         jFormattedTextField2 = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jFormattedTextField3 = new javax.swing.JFormattedTextField();
+        jLabel9 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 244, 204));
 
+        jLabel8.setForeground(new java.awt.Color(255, 190, 0));
         jLabel8.setText("Senha:");
 
         jPasswordField1.addActionListener(this::jPasswordField1ActionPerformed);
@@ -52,12 +54,16 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
         jButton2.setText("Já possuo cadastro");
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
+        jLabel2.setForeground(new java.awt.Color(255, 190, 0));
         jLabel2.setText("Nome:");
 
+        jLabel4.setForeground(new java.awt.Color(255, 190, 0));
         jLabel4.setText("E-mail:");
 
+        jLabel5.setForeground(new java.awt.Color(255, 190, 0));
         jLabel5.setText("Numero de telefone:");
 
+        jLabel6.setForeground(new java.awt.Color(255, 190, 0));
         jLabel6.setText("Endereço:");
 
         jLabel1.setFont(new java.awt.Font("Liberation Serif", 0, 36)); // NOI18N
@@ -70,6 +76,7 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
 
         jFormattedTextField1.addActionListener(this::jFormattedTextField1ActionPerformed);
 
+        jLabel7.setForeground(new java.awt.Color(255, 190, 0));
         jLabel7.setText("Tipo de usuario:");
 
         jFormattedTextField2.addActionListener(this::jFormattedTextField2ActionPerformed);
@@ -79,11 +86,17 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
 
         jFormattedTextField3.addActionListener(this::jFormattedTextField3ActionPerformed);
 
+        jLabel9.setForeground(new java.awt.Color(255, 190, 0));
+        jLabel9.setText("Cpf:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel9)
+                .addContainerGap(342, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(15, 15, 15)
@@ -114,7 +127,10 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 712, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(194, 194, 194)
+                .addComponent(jLabel9)
+                .addContainerGap(500, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -198,6 +214,7 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
 }
