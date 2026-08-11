@@ -8,6 +8,7 @@ import com.mycompany.gerenciadordebiblioteca.model.*;
 import com.mycompany.gerenciadordebiblioteca.dao.*;
 
 import java.sql.Connection;
+import com.mycompany.gerenciadordebiblioteca.controller.CadastroBD;
 /**
  *
  * @author guilherme
@@ -15,6 +16,10 @@ import java.sql.Connection;
 public class GerenciadorDeBiblioteca {
 
     public static void main(String[] args) {
+        
+        CadastroBD abrircadastro = new CadastroBD();
+        abrircadastro.AbrirRegistro();
+        
         DatabaseInitializer.iniciar();
         TableInitializer.iniciar();
         
