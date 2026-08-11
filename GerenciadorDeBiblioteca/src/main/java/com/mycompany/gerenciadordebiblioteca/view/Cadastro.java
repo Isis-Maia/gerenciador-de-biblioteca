@@ -8,14 +8,14 @@ package com.mycompany.gerenciadordebiblioteca.view;
  *
  * @author mia
  */
-public class Login extends javax.swing.JDialog {
+public class Cadastro extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Login.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Cadastro.class.getName());
 
     /**
      * Creates new form Login
      */
-    public Login(java.awt.Frame parent, boolean modal) {
+    public Cadastro(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
     }
@@ -201,7 +201,7 @@ public class Login extends javax.swing.JDialog {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                Login dialog = new Login(new javax.swing.JFrame(), true);
+                Cadastro dialog = new Cadastro(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
