@@ -49,15 +49,15 @@ public class Login extends javax.swing.JDialog {
 
         jLabel1.setBackground(new java.awt.Color(255, 190, 0));
         jLabel1.setFont(new java.awt.Font("Liberation Serif", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 190, 0));
+        jLabel1.setForeground(new java.awt.Color(173, 129, 0));
         jLabel1.setText("Entrar no perfil");
 
-        jLabel2.setForeground(new java.awt.Color(255, 190, 0));
+        jLabel2.setForeground(new java.awt.Color(173, 129, 0));
         jLabel2.setText("Nome:");
 
         jFormattedTextField1.addActionListener(this::jFormattedTextField1ActionPerformed);
 
-        jLabel8.setForeground(new java.awt.Color(255, 190, 0));
+        jLabel8.setForeground(new java.awt.Color(173, 129, 0));
         jLabel8.setText("Senha:");
 
         jButton2.setText("< Cancelar");
