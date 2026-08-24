@@ -13,19 +13,21 @@ public class Usuario {
             private String email;
             private String localizacao;
             private String numero;
-            private boolean funcionario; // para definir se é ou não funcionario
+            private boolean funcionario;// para definir se é ou não funcionario
+            private String senha;
             
             // Construtor sem id (antes de salvar)
-            public Usuario(String nome, String cpf, String email, String localizacao, String numero, boolean funcionario){
+            public Usuario(String nome, String cpf, String email, String localizacao, String numero, boolean funcionario, String senha){
                 this.nome = nome;
                 this.cpf = cpf;
                 this.email = email;
                 this.localizacao = localizacao;
                 this.numero = numero;
                 this.funcionario = funcionario;
+                this.senha = senha;
             }
             // Construtor com id (pra quando já veio do banco)
-            public Usuario(int id, String nome, String cpf, String email, String localizacao, String numero, boolean funcionario){
+            public Usuario(int id, String nome, String cpf, String email, String localizacao, String numero, boolean funcionario, String senha){
                 this.id = id;   
                 this.nome = nome;
                 this.cpf = cpf;
@@ -33,6 +35,7 @@ public class Usuario {
                 this.localizacao = localizacao;
                 this.numero = numero;
                 this.funcionario = funcionario;
+                this.senha = senha;
             }
 
 
@@ -57,6 +60,9 @@ public class Usuario {
             
             public boolean getFuncionario() { return funcionario; }
             public void setFuncionario(Boolean funcionario) {this.funcionario = funcionario;}
+            
+            public String getSenha() { return senha; }
+            public void setSenha(String senha) {this.senha = senha;}
             
     }
 

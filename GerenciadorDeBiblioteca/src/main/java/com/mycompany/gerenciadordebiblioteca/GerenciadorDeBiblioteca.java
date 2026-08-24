@@ -7,6 +7,9 @@ import com.mycompany.gerenciadordebiblioteca.util.*;
 import com.mycompany.gerenciadordebiblioteca.model.*;
 import com.mycompany.gerenciadordebiblioteca.dao.*;
 
+import com.mycompany.gerenciadordebiblioteca.view.RegistrodeUsuario;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import java.sql.Connection;
 import com.mycompany.gerenciadordebiblioteca.controller.CadastroBD;
 /**
@@ -17,19 +20,33 @@ public class GerenciadorDeBiblioteca {
 
     public static void main(String[] args) {
         
-        CadastroBD abrircadastro = new CadastroBD();
-        abrircadastro.AbrirRegistro();
+//        DatabaseInitializer.iniciar();
+//        TableInitializer.iniciar();
+//        
+//        Connection conn = ConnectionFactory.getConnection();
+//        if (conn != null){
+//            System.out.println("Conexão bem-sucedida!");
+//            ConnectionFactory.closeConnection(conn);
+//        }
         
-        DatabaseInitializer.iniciar();
-        TableInitializer.iniciar();
+        SwingUtilities.invokeLater(() -> {
+
+            JFrame frame = new JFrame("Gerenciador de Biblioteca");
+
+            RegistrodeUsuario registro = new RegistrodeUsuario();
+
+            frame.setContentPane(registro);
+
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+            frame.pack();
+
+            frame.setLocationRelativeTo(null);
+
+            frame.setVisible(true);
+        });
         
-        Connection conn = ConnectionFactory.getConnection();
-        if (conn != null){
-            System.out.println("Conexão bem-sucedida!");
-            ConnectionFactory.closeConnection(conn);
-        }
-        
-        Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false);
+        Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false,"iurf");
         UsuarioDAO dao = new UsuarioDAO();
         dao.cadastrar(novoUsuario);
         

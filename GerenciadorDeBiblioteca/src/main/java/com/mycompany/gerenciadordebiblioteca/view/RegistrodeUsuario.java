@@ -4,11 +4,18 @@
  */
 package com.mycompany.gerenciadordebiblioteca.view;
 import com.mycompany.gerenciadordebiblioteca.model.Usuario;
+import com.mycompany.gerenciadordebiblioteca.controller.CadastroBD;
 /**
  *
  * @author mia
  */
 public class RegistrodeUsuario extends javax.swing.JPanel {
+    
+    private Usuario usuario;
+       
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
     
     /**
@@ -176,6 +183,21 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:  
+        String nome = jFormattedTextField1.getText();
+        String cpf = jFormattedTextField2.getText();
+        String email = jFormattedTextField3.getText();
+        String numero = jFormattedTextField4.getText();
+        String localizacao = jFormattedTextField5.getText();
+        String senha = new String(jPasswordField1.getPassword());
+        
+        String funcionarioStr = (String)jComboBox1.getSelectedItem();
+        boolean funcionario = !funcionarioStr.equals("Leitor");
+        
+        usuario = new Usuario(nome,cpf,email,localizacao,numero,funcionario,senha);
+        
+        CadastroBD cadastroBD = new CadastroBD();
+
+        cadastroBD.AbrirRegistro(usuario);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed

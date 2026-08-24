@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class UsuarioDAO {
     
     public void cadastrar(Usuario usuario) {
-        String sql = "INSERT INTO usuarios (nome, cpf, email, localizacao, numero, funcionario) VALUES (?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO usuarios (nome, cpf, email, localizacao, numero, funcionario, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -29,6 +29,7 @@ public class UsuarioDAO {
             stmt.setString(4, usuario.getLocalizacao());
             stmt.setString(5, usuario.getNumero());
             stmt.setBoolean(6, usuario.getFuncionario());
+            stmt.setString(7, usuario.getSenha());
 
             stmt.executeUpdate();
             System.out.println("Usuário cadastrado com sucesso!");
@@ -53,7 +54,7 @@ public class UsuarioDAO {
             
             while (rs.next()){
                 
-                Usuario usuario = new Usuario(0, "", "", "", "", "", true);
+                Usuario usuario = new Usuario(0, "", "", "", "", "", true, "");
                 
                 usuario.setId(rs.getInt("id"));
                 usuario.setNome(rs.getString("nome"));
@@ -62,6 +63,7 @@ public class UsuarioDAO {
                 usuario.setNumero(rs.getString("numero"));
                 usuario.setLocalizacao(rs.getString("localizacao"));
                 usuario.setFuncionario(rs.getBoolean("funcionario"));
+                usuario.setSenha(rs.getString("senha"));
                 usuarios.add(usuario);
                 
             }

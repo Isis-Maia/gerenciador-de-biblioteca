@@ -12,15 +12,7 @@ import com.mycompany.gerenciadordebiblioteca.view.RegistrodeUsuario;
  */
 public class CadastroBD {
     
-    public void AbrirRegistro() {
-    
-        RegistrodeUsuario cadastroDB = new RegistrodeUsuario();
-
-        cadastroDB.setVisible(true);
-
-        System.out.println("A janela foi fechada!");
-
-        Usuario usuario = cadastroDB.getUsuario();
+    public void AbrirRegistro(Usuario usuario) {
 
         if (usuario != null) {
             System.out.println("Usuario recebido:");
@@ -30,6 +22,7 @@ public class CadastroBD {
             System.out.println(usuario.getLocalizacao());
             System.out.println(usuario.getNumero());
             System.out.println(usuario.getFuncionario());
+            System.out.println(usuario.getSenha());
         } else {
             System.out.println("Error 1717 : Usuario Não Recebido");
         }
