@@ -19,7 +19,7 @@ import com.mycompany.gerenciadordebiblioteca.controller.CadastroBD;
 public class GerenciadorDeBiblioteca {
 
     public static void main(String[] args) {
-        
+ // descomentar depois 
 //        DatabaseInitializer.iniciar();
 //        TableInitializer.iniciar();
 //        

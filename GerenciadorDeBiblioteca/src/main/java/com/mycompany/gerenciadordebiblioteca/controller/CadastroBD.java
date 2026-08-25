@@ -5,6 +5,7 @@
 package com.mycompany.gerenciadordebiblioteca.controller;
 import com.mycompany.gerenciadordebiblioteca.model.Usuario;
 import com.mycompany.gerenciadordebiblioteca.view.RegistrodeUsuario;
+import com.mycompany.gerenciadordebiblioteca.dao.UsuarioDAO;
 
 /**
  *
@@ -23,6 +24,9 @@ public class CadastroBD {
             System.out.println(usuario.getNumero());
             System.out.println(usuario.getFuncionario());
             System.out.println(usuario.getSenha());
+            
+            UsuarioDAO dao = new UsuarioDAO();
+            dao.cadastrar(usuario);
         } else {
             System.out.println("Error 1717 : Usuario Não Recebido");
         }
