@@ -42,6 +42,39 @@ public class UsuarioDAO {
             }
         }
     }
+
+    public Usuario login(String nome, String senhaDigitada) {
+        String sql = "SELECT * FROM usuarios WHERE nome = ?";
+
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            stmt.setString(1, nome);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                String senhaSalva = rs.getString("senha");
+
+                if (senhaDigitada.equals(senhaSalva)) {
+                    return new Usuario(
+                        rs.getInt("id"),
+                        rs.getString("nome"),
+                        rs.getString("cpf"),
+                        rs.getString("email"),
+                        rs.getString("numero"),
+                        rs.getString("localizacao"),
+                        rs.getBoolean("funcionario"),
+                        rs.getString("senha")
+                    );
+                }
+            }
+
+            return null; // email não existe OU senha errada
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Erro ao fazer login: " + e.getMessage(), e);
+        }
+    }
     
     public List<Usuario> read() {
         

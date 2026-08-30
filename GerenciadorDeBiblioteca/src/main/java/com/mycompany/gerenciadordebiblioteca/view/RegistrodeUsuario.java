@@ -182,7 +182,9 @@ public class RegistrodeUsuario extends javax.swing.JPanel {
     }//GEN-LAST:event_jPasswordField1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // Já possui cadastro:
+        new Login().setVisible(true);
+        javax.swing.SwingUtilities.getWindowAncestor(this).dispose();  
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed

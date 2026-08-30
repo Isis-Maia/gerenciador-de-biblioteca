@@ -65,37 +65,6 @@ public class Usuario {
             public String getSenha() { return senha; }
             public void setSenha(String senha) {this.senha = senha;}
             
-            public Usuario login(String email, String senhaDigitada) {
-                String sql = "SELECT * FROM usuarios WHERE email = ?";
-
-                try (Connection conn = ConnectionFactory.getConnection();
-                     PreparedStatement stmt = conn.prepareStatement(sql)) {
-
-                    stmt.setString(1, email);
-                    ResultSet rs = stmt.executeQuery();
-
-                    if (rs.next()) {
-                        String senhaHashSalva = rs.getString("senha");
-
-                        if (senhaDigitada.equals(senhaHashSalva)) {
-                            return new Usuario(
-                                rs.getInt("id"),
-                                rs.getString("nome"),
-                                rs.getString("cpf"),
-                                rs.getString("email"),
-                                rs.getString("numero"),
-                                rs.getString("endereco"),
-                                rs.getBoolean("funcionario"),
-                                rs.getString("senha")
-                            );
-                        }
-                    }
-
-                    return null; // email não existe OU senha errada
-
-                } catch (SQLException e) {
-                    throw new RuntimeException("Erro ao fazer login: " + e.getMessage(), e);
-                }
-            }
+            
     }
 

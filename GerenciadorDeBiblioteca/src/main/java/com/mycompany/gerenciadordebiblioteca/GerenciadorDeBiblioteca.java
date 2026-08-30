@@ -19,30 +19,22 @@ import com.mycompany.gerenciadordebiblioteca.controller.CadastroBD;
 public class GerenciadorDeBiblioteca {
 
     public static void main(String[] args) {
- // descomentar depois 
-//        DatabaseInitializer.iniciar();
-//        TableInitializer.iniciar();
-//        
-//        Connection conn = ConnectionFactory.getConnection();
-//        if (conn != null){
-//            System.out.println("Conexão bem-sucedida!");
-//            ConnectionFactory.closeConnection(conn);
-//        }
+        DatabaseInitializer.iniciar();
+        TableInitializer.iniciar();
+        
+        Connection conn = ConnectionFactory.getConnection();
+        if (conn != null){
+            System.out.println("Conexão bem-sucedida!");
+            ConnectionFactory.closeConnection(conn);
+        }
         
         SwingUtilities.invokeLater(() -> {
-
             JFrame frame = new JFrame("Gerenciador de Biblioteca");
-
             RegistrodeUsuario registro = new RegistrodeUsuario();
-
             frame.setContentPane(registro);
-
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
             frame.pack();
-
             frame.setLocationRelativeTo(null);
-
             frame.setVisible(true);
         });
         
