@@ -28,15 +28,7 @@ public class GerenciadorDeBiblioteca {
             ConnectionFactory.closeConnection(conn);
         }
         
-        SwingUtilities.invokeLater(() -> {
-            JFrame frame = new JFrame("Gerenciador de Biblioteca");
-            RegistrodeUsuario registro = new RegistrodeUsuario();
-            frame.setContentPane(registro);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
+        new RegistrodeUsuario().setVisible(true);
         
         Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false,"iurf");
         UsuarioDAO dao = new UsuarioDAO();
@@ -46,8 +38,6 @@ public class GerenciadorDeBiblioteca {
         AutorDAO autorDAO = new AutorDAO();
         autorDAO.cadastrar(autor);
         
-        Livro livro = new Livro("Dom carmuso", "1890", 1, 2, "sla", "xyz");
-        LivroDAO livroDAO = new LivroDAO();
-        livroDAO.cadastrar(livro);
+
     }
 }

@@ -7,27 +7,24 @@ package com.mycompany.gerenciadordebiblioteca.model;
 public class Livro {
         private int id;
         private String titulo;
-        private String publicacao;
+        private int publicacao;
         public String editora;
-        private int autorId;
         private int quantidade;
         private String genero;
         
         // Construtor sem id (antes de salvar)
-        public Livro(String titulo, String publicacao, int autorId, int quantidade, String genero, String editora){
+        public Livro(String titulo, int publicacao,  int quantidade, String genero, String editora){
             this.titulo = titulo;
             this.publicacao = publicacao;
-            this.autorId = autorId;
             this.quantidade = quantidade;
             this.genero = genero;
             this.editora = editora;
         }
         // Construtor com id (pra quando já veio do banco)
-        public Livro(int id, String titulo, String publicacao, int autorId, int quantidade, String genero, String editora){
+        public Livro(int id, String titulo, int publicacao, int quantidade, String genero, String editora){
             this.id = id;
             this.titulo = titulo;
             this.publicacao = publicacao;
-            this.autorId = autorId;
             this.quantidade = quantidade;
             this.genero = genero;
             this.editora = editora;
@@ -42,12 +39,8 @@ public class Livro {
             public String getTitulo() { return titulo; }
             public void setTitulo(String titulo) {this.titulo = titulo;}
 
-            public String getPublicacao() { return publicacao; }
-            public void setPublicacao(String publicacao) {this.publicacao = publicacao;}
-
-
-            public int getAutor() { return autorId; }
-            public void setAutor(int autor) {this.autorId = autor;}
+            public int getPublicacao() { return publicacao; }
+            public void setPublicacao(int publicacao) {this.publicacao = publicacao;}
             
             public int getQuantidade() { return quantidade; }
             public void setQuantidade(int quantidade) {this.quantidade = quantidade;}
