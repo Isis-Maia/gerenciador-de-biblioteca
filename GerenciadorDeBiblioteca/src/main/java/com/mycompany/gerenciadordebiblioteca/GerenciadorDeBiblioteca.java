@@ -29,15 +29,10 @@ public class GerenciadorDeBiblioteca {
         }
         
         new RegistrodeUsuario().setVisible(true);
+         
+        LivroDAO dao = new LivroDAO();
+        Livro livro = new Livro("Dom carmuso", 1884, 5, "Romance", "SLA");
+        dao.cadastrar(livro, "Machado de Assis");
         
-        Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false,"iurf");
-        UsuarioDAO dao = new UsuarioDAO();
-        dao.cadastrar(novoUsuario);
-        
-        Autor autor = new Autor("Machado de Assis");
-        AutorDAO autorDAO = new AutorDAO();
-        autorDAO.cadastrar(autor);
-        
-
     }
 }
