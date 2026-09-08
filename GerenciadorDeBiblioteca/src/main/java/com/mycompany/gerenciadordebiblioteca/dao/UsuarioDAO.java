@@ -17,6 +17,8 @@ import java.util.logging.Logger;
  */
 public class UsuarioDAO {
     
+    private static boolean TipoFuncionario;
+    
     public void cadastrar(Usuario usuario) {
         String sql = "INSERT INTO usuarios (nome, cpf, email, localizacao, numero, funcionario, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
         
@@ -53,6 +55,8 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
+                TipoFuncionario = rs.getBoolean("funcionario");
+                
                 String senhaSalva = rs.getString("senha");
 
                 if (senhaDigitada.equals(senhaSalva)) {
@@ -74,6 +78,12 @@ public class UsuarioDAO {
         } catch (SQLException e) {
             throw new RuntimeException("Erro ao fazer login: " + e.getMessage(), e);
         }
+    }
+    
+    public static boolean ehFuncionario() 
+    {   
+        System.out.println("Funcionario recebido");
+        return TipoFuncionario;
     }
     
     public List<Usuario> read() {

@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.gerenciadordebiblioteca.view;
+import com.mycompany.gerenciadordebiblioteca.dao.UsuarioDAO;
 
 /**
  *
@@ -16,6 +17,11 @@ public class TelaInicial extends javax.swing.JFrame {
      * Creates new form TelaInicial
      */
     public TelaInicial() {
+//        if (UsuarioDAO.ehFuncionario())
+//        {
+//                System.out.print("Abriu o Cadastro");
+//                new CadastroLivro(this, true).setVisible(true);
+//        }
         initComponents();
     }
 
