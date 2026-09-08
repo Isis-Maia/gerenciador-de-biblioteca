@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
 package com.mycompany.gerenciadordebiblioteca.view;
+import java.util.ArrayList;
 
 /**
  *
@@ -292,7 +293,69 @@ public class CadastroLivro extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String titulo = jFormattedTextField1.getText();
-        int publicação = jSpinner3.getValue;
+        int paginas = (int) jSpinner1.getValue();
+        int publicacao = (int) jSpinner3.getValue();
+        int quantidade = (int) jSpinner2.getValue();
+        
+        ArrayList<String> generos = new ArrayList<>();
+        
+        if (jCheckBox1.isSelected()){
+            generos.add("Romance");
+        }
+        
+        if (jCheckBox2.isSelected()){
+            generos.add("Terror");
+        }
+        
+        if (jCheckBox3.isSelected()){
+            generos.add("Suspense");
+        }
+        
+        if (jCheckBox4.isSelected()){
+            generos.add("Romantico");
+        }
+        
+        if (jCheckBox5.isSelected()){
+            generos.add("Aventura");
+        }
+        
+        if (jCheckBox6.isSelected()){
+            generos.add("Classico");
+        }
+        
+        if (jCheckBox7.isSelected()){
+            generos.add("Ficção");
+        }
+        
+        if (jCheckBox8.isSelected()){
+            generos.add("Ficção cientifica");
+        }
+        
+        if (jCheckBox9.isSelected()){
+            generos.add("Herois");
+        }
+        
+        if (jCheckBox10.isSelected()){
+            generos.add("Biografia");
+        }
+        
+        if (jCheckBox11.isSelected()){
+            generos.add("Horror");
+        }
+        
+        if (jCheckBox12.isSelected()){
+            generos.add("Acadêmicos");
+        }
+        
+        System.out.println(titulo);
+        System.out.println(paginas);
+        System.out.println(publicacao);
+        System.out.println(quantidade);
+        
+        for (String genero : generos){
+            System.out.println(genero);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed

@@ -69,6 +69,7 @@ public class TableInitializer {
             "  quantidade INT NOT NULL," +
             "  genero VARCHAR(20) NOT NULL," +
             "  autorId VARCHAR(20),"+
+            "  descricao VARCHAR(999)"+
             ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
         try (Connection conn = ConnectionFactory.getConnection();
