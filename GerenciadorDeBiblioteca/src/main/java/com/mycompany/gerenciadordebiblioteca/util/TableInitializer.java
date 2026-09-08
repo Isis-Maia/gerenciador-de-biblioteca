@@ -64,6 +64,7 @@ public class TableInitializer {
             "CREATE TABLE IF NOT EXISTS livros (" +
             "  id INT AUTO_INCREMENT PRIMARY KEY," +
             "  titulo VARCHAR(150) NOT NULL UNIQUE, " +
+            "  paginas INT NOT NULL," +
             "  editora VARCHAR(150)," +
             "  publicacao INT NOT NULL," +
             "  quantidade INT NOT NULL," +

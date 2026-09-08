@@ -250,7 +250,6 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
 
         // Fecha a tela atual
         this.dispose();
-}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
@@ -302,4 +301,5 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPasswordField jPasswordField1;
     // End of variables declaration//GEN-END:variables
+
 }

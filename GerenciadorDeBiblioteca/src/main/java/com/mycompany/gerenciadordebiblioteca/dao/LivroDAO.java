@@ -15,18 +15,19 @@ import java.sql.SQLException;
  */
 public class LivroDAO {
     public void cadastrar (Livro livro, Autor autor){
-        String sql = "INSERT INTO livros (titulo, publicacao, Nome, quantidade, genero, editora, descricao) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO livros (titulo, publicacao, Nome, quantidade, genero, editora, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         
         try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
             stmt.setString(1, livro.getTitulo());
-            stmt.setInt(2, livro.getPublicacao());
-            stmt.setString(3, autor.getNome());
-            stmt.setInt(4, livro.getQuantidade());
-            stmt.setString(5, livro.getGenero());
-            stmt.setString(6, livro.getEditora());
-            stmt.setString(7, livro.getDescricao());
+            stmt.setInt(2, livro.getPaginas());
+            stmt.setInt(3, livro.getPublicacao());
+            stmt.setString(4, autor.getNome());
+            stmt.setInt(5, livro.getQuantidade());
+            stmt.setString(6, livro.getGenero());
+            stmt.setString(7, livro.getEditora());
+            stmt.setString(8, livro.getDescricao());
             
             stmt.executeUpdate();
             System.out.println("Livro cadastrado com sucesso!");

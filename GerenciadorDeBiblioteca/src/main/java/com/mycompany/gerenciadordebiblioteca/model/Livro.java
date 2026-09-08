@@ -7,6 +7,7 @@ package com.mycompany.gerenciadordebiblioteca.model;
 public class Livro {
         private int id;
         private String titulo;
+        private int paginas;
         private int publicacao;
         public String editora;
         private int quantidade;
@@ -14,8 +15,9 @@ public class Livro {
         private String descricao;
         
         // Construtor sem id (antes de salvar)
-        public Livro(String titulo, int publicacao,  int quantidade, String genero, String editora, String descricao){
+        public Livro(String titulo,int paginas, int publicacao,  int quantidade, String genero, String editora, String descricao){
             this.titulo = titulo;
+            this.paginas = paginas;
             this.publicacao = publicacao;
             this.quantidade = quantidade;
             this.genero = genero;
@@ -23,9 +25,10 @@ public class Livro {
             this.descricao = descricao;
         }
         // Construtor com id (pra quando já veio do banco)
-        public Livro(int id, String titulo, int publicacao, int quantidade, String genero, String editora, String descricao){
+        public Livro(int id, String titulo,int paginas, int publicacao, int quantidade, String genero, String editora, String descricao){
             this.id = id;
             this.titulo = titulo;
+            this.paginas = paginas;
             this.publicacao = publicacao;
             this.quantidade = quantidade;
             this.genero = genero;
@@ -56,6 +59,17 @@ public class Livro {
 
             public String getDescricao() { return descricao; }
             public void setDescricao(String descricao) { this.descricao = descricao; }
+
+            public int getPaginas() {
+                return paginas;
+            }
+
+            public void setPaginas(int paginas) {
+                this.paginas = paginas;
+            }
+            
+            
+            
              
         }
             

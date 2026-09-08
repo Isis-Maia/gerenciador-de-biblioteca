@@ -4,7 +4,6 @@
  */
 package com.mycompany.gerenciadordebiblioteca.controller;
 import com.mycompany.gerenciadordebiblioteca.model.Usuario;
-import com.mycompany.gerenciadordebiblioteca.view.RegistrodeUsuario;
 import com.mycompany.gerenciadordebiblioteca.dao.UsuarioDAO;
 
 /**

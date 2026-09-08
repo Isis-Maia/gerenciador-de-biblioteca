@@ -29,15 +29,6 @@ public class GerenciadorDeBiblioteca {
         }
         
         new RegistrodeUsuario().setVisible(true);
-        
-        Usuario novoUsuario = new Usuario("Maria","12345678900","maria@email.com","Rua das Flores, 123","82999999999",false,"iurf");
-        UsuarioDAO dao = new UsuarioDAO();
-        dao.cadastrar(novoUsuario);
-        
-        Autor autor = new Autor("Machado de Assis");
-        AutorDAO autorDAO = new AutorDAO();
-        autorDAO.cadastrar(autor);
-        
 
     }
 }

@@ -4,6 +4,8 @@
  */
 package com.mycompany.gerenciadordebiblioteca.view;
 import java.util.ArrayList;
+import com.mycompany.gerenciadordebiblioteca.model.Livro;
+import com.mycompany.gerenciadordebiblioteca.controller.CadastroLivroBD;
 
 /**
  *
@@ -11,6 +13,11 @@ import java.util.ArrayList;
  */
 public class CadastroLivro extends javax.swing.JDialog {
     
+    private Livro livro;
+       
+    public Livro getLivro() {
+        return livro;
+    }
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CadastroLivro.class.getName());
 
     /**
@@ -322,8 +329,11 @@ public class CadastroLivro extends javax.swing.JDialog {
         // TODO add your handling code here:
         String titulo = jFormattedTextField1.getText();
         int paginas = (int) jSpinner1.getValue();
-        int publicacao = (int) jSpinner3.getValue();
+        int publicacao = Integer.parseInt(jFormattedTextField3.getText());
         int quantidade = (int) jSpinner2.getValue();
+        String editora = (String)jComboBox1.getSelectedItem();
+        String descricao = jTextArea1.getText();
+        String nome = jFormattedTextField2.getText();
         
         ArrayList<String> generos = new ArrayList<>();
         
@@ -375,15 +385,9 @@ public class CadastroLivro extends javax.swing.JDialog {
             generos.add("Acadêmicos");
         }
         
-        System.out.println(titulo);
-        System.out.println(paginas);
-        System.out.println(publicacao);
-        System.out.println(quantidade);
-        
-        for (String genero : generos){
-            System.out.println(genero);
-        }
-        
+        livro = new Livro(titulo,publicacao,nome,quantidade,editora,descricao);
+        CadastroLivroBD cadastrolivroBD = new CadastroLivroBD();
+        cadastrolivroBD.AbrirRegistro(livro);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
