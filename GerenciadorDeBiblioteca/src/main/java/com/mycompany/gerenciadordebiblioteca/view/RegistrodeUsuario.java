@@ -239,12 +239,18 @@ public class RegistrodeUsuario extends javax.swing.JFrame {
 
         String funcionarioStr = (String)jComboBox1.getSelectedItem();
         boolean funcionario = !funcionarioStr.equals("Leitor");
-
+        
+        // ... seu código de cadastro já existente ...
         usuario = new Usuario(nome,cpf,email,localizacao,numero,funcionario,senha);
-
         CadastroBD cadastroBD = new CadastroBD();
-
         cadastroBD.AbrirRegistro(usuario);
+
+        // Abre a próxima tela
+        new Login().setVisible(true);
+
+        // Fecha a tela atual
+        this.dispose();
+}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jFormattedTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFormattedTextField3ActionPerformed
